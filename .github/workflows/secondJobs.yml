@@ -1,0 +1,13 @@
+name: SecondworkFlow
+on: workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hi to
+        run: |
+            echo "Hi Rahul this is first job you are "
+            echo "This is multiline command"
+      - name:  Second Step is also good
+        run: echo "This is time zone i need to get"
+ 
