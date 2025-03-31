@@ -1,0 +1,20 @@
+name: GoLang Demo
+on: workflow_dispatch
+jobs:
+    Go-build:
+        name:  Build and Run Go Applications
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check Repository
+              uses: action/checkout@v4
+            - name: Setup Go
+              uses: action/setup-go@v5
+              with:
+                go-version: '1.24.1'
+            - name: Install
+              run: go mod tidy
+            - name: Build Project
+              run: go build -v ./...
+            - name: Testing
+              run: go test -v ./...
+            
